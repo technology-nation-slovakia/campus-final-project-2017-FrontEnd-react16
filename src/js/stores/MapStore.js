@@ -53,8 +53,8 @@ class MapStore extends EventEmitter {
             }
             case "RELOAD_MAP_BROWN": {
                     if (action.data.data[0].colorBrown) {this.map.colorBrown = action.data.data[0].colorBrown};
-                    this.map.nameGreenNow = action.data.data[0].name;
-                    this.map.nameGreenThen = action.data.data[1].name;
+                    this.map.nameBrownNow = action.data.data[0].name;
+                    this.map.nameBrownThen = action.data.data[1].name;
                 this.emit("change");
                 break;
             }
