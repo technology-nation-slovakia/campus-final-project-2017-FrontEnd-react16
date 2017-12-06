@@ -1,19 +1,19 @@
 import React from "react";
 
 
-import * as MapColorActions from '../actions/MapColorActions';
+import * as MapActions from '../actions/MapActions';
 
 
 
 export default class AutoUpdateMap extends React.Component {
 
 
-  reloadMapColor() {
-		MapColorActions.reloadMapColor();
+  reloadMap() {
+		MapActions.reloadMap();
 	}
 
   componentDidMount() {
-    setInterval(this.reloadMapColor, 300000); //reload Map every 5 minutes(in milliseconds)
+    setInterval(this.reloadMap, 300000); //reload Map every 5 minutes(in milliseconds)
   }
 
     render() {

@@ -3,3 +3,74 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+
+.floor{
+    fill: #999999;
+}
+.floor_room {
+    fill: #999999;
+}
+.desc {
+    fill: white;
+}
+
+#map {
+filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.5));}
+
+#map:hover .rect { animation: none; }
+
+#BubbleGreen:hover + #Rect_Green { animation: none; opacity: 1; }
+#BubbleBrown:hover + #Rect_Brown { animation: none; opacity: 1; }
+#BubbleKafe:hover + #Rect_Kafe { animation: none; opacity: 1; }
+#BubbleTerrace:hover + #Rect_Terrace { animation: none; opacity: 1; }
+
+
+@keyframes Show {
+    0% { opacity: 1;}
+    20% { opacity: 1;}
+    25% { opacity: .0;}
+    100% { opacity: .0;}
+}
+
+#Rect_Kafe {
+   animation: Show 20s infinite linear;
+   animation-delay: 0s;
+}
+
+#Rect_Green {
+   animation: Show 20s infinite linear;
+   animation-delay: 5s;
+}
+
+#Rect_Brown {
+   animation: Show 20s infinite linear;
+   animation-delay: 10s;
+}
+
+#Rect_Terrace {
+   animation: Show 20s infinite linear;
+   animation-delay: 15s;
+}
+
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+@keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+
+
+#BubbleGreen:hover {-webkit-animation: mover 0.5s infinite  alternate;
+                            animation: mover 0.5s infinite  alternate;}
+
+#BubbleBrown:hover {-webkit-animation: mover 0.5s infinite  alternate;
+                            animation: mover 0.5s infinite  alternate;}
+
+#BubbleKafe:hover {-webkit-animation: mover 0.5s infinite  alternate;
+                            animation: mover 0.5s infinite  alternate;}
+
+#BubbleTerrace:hover {-webkit-animation: mover 0.5s infinite  alternate;
+                            animation: mover 0.5s infinite  alternate;}
