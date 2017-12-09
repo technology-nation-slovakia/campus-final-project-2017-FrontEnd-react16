@@ -12,7 +12,11 @@ body {
     fill: #999999;
 }
 .desc {
-    fill: white;
+    fill: #999999;
+}
+.name {
+    font-weight: bold;
+    font-size: 120%;
 }
 
 #map {
@@ -52,6 +56,11 @@ filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.5));}
    animation: Show 20s infinite linear;
    animation-delay: 15s;
 }
+
+
+
+
+
 
 @-webkit-keyframes mover {
     0% { transform: translateY(0); }

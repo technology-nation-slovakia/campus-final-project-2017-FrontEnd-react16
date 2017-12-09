@@ -58,7 +58,7 @@ class MapStore extends EventEmitter {
                 this.emit("change");
                 break;
             }
-            
+
             default:
                 // do nothing
         }

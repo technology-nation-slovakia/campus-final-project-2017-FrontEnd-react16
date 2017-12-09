@@ -5,7 +5,6 @@ import * as MapActions from '../actions/MapActions';
 
 import AutoUpdateMap from './AutoUpdateMap';
 
-
 class MapAll extends React.Component {
 	constructor() {
 		super();
@@ -53,19 +52,24 @@ class MapAll extends React.Component {
 
 	  return (
 	  	<div style={mapStyle}>
-		    <svg width="1280" height="640">
+		    <svg width="1405" height="615">
+		    	<rect x="1000" y="30" width="400" height="580" rx="5" ry="5" fill="white" stroke="black" stroke-width="1.5" opacity="0.1"/>
+		    	<line x1="1010" y1="175" x2="1390" y2="175" stroke="black" stroke-width="1.5" opacity="0.1" />
+		    	<line x1="1010" y1="320" x2="1390" y2="320" stroke="black" stroke-width="1.5" opacity="0.1" />
+		    	<line x1="1010" y1="465" x2="1390" y2="465" stroke="black" stroke-width="1.5" opacity="0.1" />
 		    	<g id="map">
-					<Floor color ="#999999"/>
-					<Kafe color={colorCaffe} />
-					<CommonSpace />
-					<GreenMeetingRoom color={colorGreen} />
-					<g fill="#999999" className="wall" transform="translate(560,280)scale(-1,1)"><DoubleWallH /></g>
-					<PrivateOffices />
-					<BrownMeetingRoom color={colorBrown} />
-					<OpenSpace />
-					<Terrace color={colorTerrace} />
-					<People />
-
+			    	<g opacity="1">
+						<Floor color ="#999999"/>
+						<Kafe color={colorCaffe} />
+						<CommonSpace />
+						<GreenMeetingRoom color={colorGreen} />
+						<g fill="#999999" className="wall" transform="translate(560,280)scale(-1,1)"><DoubleWallH /></g>
+						<PrivateOffices />
+						<BrownMeetingRoom color={colorBrown} />
+						<OpenSpace />
+						<Terrace color={colorTerrace} />
+						<People />
+					</g>
 					<KafeRect color={colorCaffe} nameNow={nameCaffeNow} nameThen={nameCaffeThen}/>
 					<BrownMeetingRoomRect color={colorBrown} nameNow={nameBrownNow} nameThen={nameBrownThen}/>
 					<GreenMeetingRoomRect color={colorGreen} nameNow={nameGreenNow} nameThen={nameGreenThen}/>
@@ -82,7 +86,7 @@ class MapAll extends React.Component {
 class Terrace extends React.Component {
 	render() {
 	return (
-		<g fill={this.props.color}>
+		<g id="Terrace" fill={this.props.color}>
 			<g transform="translate(430,200)scale(3)">
 				<polygon fill="#999999" className="floor" points="-79.867,71 -15.867,103 -79.867,135 -143.867,103 						"/>
 			</g>
@@ -117,11 +121,13 @@ class TerraceRect extends React.Component {
 	return (
 		<g fill={this.props.color}>
 			<g id="BubbleTerrace" className="bubble" ><BubbleTerrace /></g>
-			<g id="Rect_Terrace" className="rect" opacity="0"><Rect xposition="280" yposition="440" />
-				<text className="desc" x="300" y="460">
-					<tspan x="300" dy="0.4em">Terrace</tspan>
-        			<tspan x="300" dy="1.8em">{nowEventName}</tspan>
-        			<tspan x="300" dy="1.4em">{thenEventName}</tspan>
+			<g id="Rect_Terrace" className="rect" opacity="0"><Rect yposition="465" /></g>
+			<g>
+			<Glass />
+				<text className="desc" x="1060" y="485">
+					<tspan className="name" x="1060" dy="1.4em">Terrace</tspan>
+        			<tspan  x="1060" dy="1.8em">{nowEventName}</tspan>
+        			<tspan x="1060" dy="1.6em">{thenEventName}</tspan>
 				</text>
 			</g>
 		</g>
@@ -132,7 +138,7 @@ class TerraceRect extends React.Component {
 class GreenMeetingRoom extends React.Component {
 	render() {
 		return (
-			<g fill={this.props.color}>
+			<g id="Green" fill={this.props.color}>
 				<g transform="translate(427,200)scale(3)">
 					<polygon fill="#999999" className="floor" points="53.629,12.4 76.562,23.867 53.629,35.334 30.695,23.867 						"/>
 				</g>
@@ -162,11 +168,13 @@ class GreenMeetingRoomRect extends React.Component {
 		return (
 			<g fill={this.props.color}>
 				<g id="BubbleGreen" className="bubble" ><BubbleGreen /></g>
-				<g id="Rect_Green" opacity="0" className="rect"><Rect xposition="655" yposition="180" />
-					<text className="desc" x="675" y="200">
-					<tspan x="675" dy="0.4em">Green Meeting Room</tspan>
-        			<tspan x="675" dy="1.8em">{nowEventName}</tspan>
-        			<tspan x="675" dy="1.4em">{thenEventName}</tspan>
+				<g id="Rect_Green" className="rect" opacity="0" ><Rect yposition="175" /></g>
+				<g>
+				<Vegetable />
+					<text className="desc" x="1060" y="195">
+					<tspan className="name" x="1060" dy="1.4em">Green Meeting Room</tspan>
+        			<tspan x="1060" dy="1.8em">{nowEventName}</tspan>
+        			<tspan x="1060" dy="1.6em">{thenEventName}</tspan>
 				</text>
 				</g>
 			</g>
@@ -177,7 +185,7 @@ class GreenMeetingRoomRect extends React.Component {
 class BrownMeetingRoom extends React.Component {
 	render() {
 	return (
-		<g fill={this.props.color}>
+		<g id="Brown" fill={this.props.color}>
 			<g transform="translate(432,200)scale(3)">
 				<polygon fill="#999999" className="floor" points="20.21,41.532 42.012,52.933 25.21,60.333 6.409,50.933 						"/>
 			</g>
@@ -205,11 +213,13 @@ class BrownMeetingRoomRect extends React.Component {
 	return (
 		<g fill={this.props.color}>
 			<g id="BubbleBrown"><BubbleBrown /></g>
-			<g id="Rect_Brown" className="rect" opacity="0"><Rect xposition="575" yposition="280" />
-				<text className="desc" x="595" y="300">
-					<tspan x="595" dy="0.4em">Brown Meeting Room</tspan>
-        			<tspan x="595" dy="1.8em">{nowEventName}</tspan>
-        			<tspan x="595" dy="1.4em">{thenEventName}</tspan>
+			<g id="Rect_Brown" className="rect" opacity="0"><Rect yposition="320" /></g>
+			<g>
+			<Comment />
+				<text className="desc" x="1060" y="340">
+					<tspan className="name" x="1060" dy="1.4em">Brown Meeting Room</tspan>
+        			<tspan x="1060" dy="1.8em">{nowEventName}</tspan>
+        			<tspan x="1060" dy="1.6em">{thenEventName}</tspan>
 				</text>
 			</g>
 		</g>
@@ -220,7 +230,7 @@ class BrownMeetingRoomRect extends React.Component {
 class Kafe extends React.Component {
 	render() {
 	return (
-		<g fill={this.props.color}>
+		<g id="Kafe" fill={this.props.color}>
 			<g transform="translate(432,200)scale(3)">
 				<polygon fill="#999999" className="floor" points="96.74,-45.367 165.2,-10.5 114.667,15 80,-2.8 100.254,-14.797 72.12,-31.867 						"/>
 			</g>
@@ -264,11 +274,13 @@ class KafeRect extends React.Component {
 	return (
 		<g fill={this.props.color}>
 			<g id="BubbleKafe" className="bubble"><BubbleKafe /></g>
-			<g id="Rect_Kafe" className="rect" opacity="0"><Rect xposition="850" yposition="110" />
-				<text className="desc" x="870" y="130">
-					<tspan x="870" dy="0.4em">Kafe</tspan>
-        			<tspan x="870" dy="1.8em">{nowEventName}</tspan>
-        			<tspan x="870" dy="1.4em">{thenEventName}</tspan>
+			<g id="Rect_Kafe" className="rect" opacity="0"><Rect yposition="30" /></g>
+			<g>
+			<Cup />
+				<text className="desc" x="1060" y="50">
+					<tspan className="name" x="1060" dy="1.4em">Kafe</tspan>
+        			<tspan x="1060" dy="1.8em">{nowEventName}</tspan>
+        			<tspan x="1060" dy="1.6em">{thenEventName}</tspan>
 				</text>
 			</g>
 		</g>
@@ -566,7 +578,7 @@ class Rect extends React.Component {
 	render() {
 		return (
 			<g>
-			<g><rect className="description" x={this.props.xposition} y={this.props.yposition} width="320" height="100" opacity = "0.95" /></g>
+				<rect fill="black" opacity="0.1" className="description" x="1000" y={this.props.yposition} width="400" height="145" rx="5" ry="5" />
 			</g>
 		);
 	}
@@ -609,6 +621,41 @@ class Floor extends React.Component {
 	}
 }
 
+class Glass extends React.Component {
+	render() {
+		return (
+			<path fill={this.props.color} transform="translate(1015,485)" d="M17.9,17.5L28.7,6.7C29,6.4,29.1,6,28.9,5.6S28.4,5,28,5h-4.6l3.3-3.3c0.4-0.4,0.4-1,0-1.4s-1-0.4-1.4,0  L20.6,5H4C3.6,5,3.2,5.2,3.1,5.6S3,6.4,3.3,6.7l10.8,10.8c0.6,0.6,0.9,1.4,0.9,2.3v8.4c0,1-0.8,1.8-1.8,1.8H11c0,0,0,0,0,0  c-1.3,0-1.2,2,0.1,2h10c1.2,0,1.4-1.8,0.2-2c-0.1,0-0.2,0-0.3,0h-1.2c-1,0-2.7-0.8-2.7-1.8v-8.4C17,18.9,17.3,18.1,17.9,17.5z   M25.6,7l-4,4h-4.2l4-4H25.6z M18.6,7l-4,4h-4.2l-4-4H18.6z"/>
+	);
+}
+}
+class Cup extends React.Component {
+	render() {
+		return (
+			<g fill={this.props.color} transform="translate(1015,50)">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M24.9,23.1c0.6,0.4,1.3,0.6,2.1,0.6c2.3,0,4.2-1.9,4.2-4.2   c0-2.3-1.9-4.2-4.2-4.2c-0.1,0-0.3,0-0.4,0v-1H3.8v2.3c0,4.7,2.9,10,6.9,11.9H2.6C3.1,29.9,5.3,31,7.9,31h14.5   c2.6,0,4.8-1.1,5.4-2.5h-8.2C21.8,27.4,23.6,25.4,24.9,23.1z M26.5,16.9c0.1,0,0.3,0,0.4,0c1.4,0,2.6,1.2,2.6,2.6   c0,1.4-1.2,2.6-2.6,2.6c-0.5,0-1-0.2-1.4-0.4C26.1,20.1,26.5,18.4,26.5,16.9z"/>
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M14.6,13c0,0,4.1-1.6,3.7-4.3C17.9,5.9,15.8,6,15.4,4   c-0.6-2.5,1.2-3.7,1.2-3.7s-3,0.9-3.5,3.6c-0.4,2.3,1.3,3,1.8,4.7C15.5,10.3,14.6,13,14.6,13z"/>
+			</g>
+	);
+}
+}
+
+class Comment extends React.Component {
+	render() {
+		return (
+			<g fill={this.props.color} transform="translate(1045,350)">
+			<path transform="scale(-1,1)" fill-rule="evenodd" clip-rule="evenodd" d="M25,2H7C3.7,2,1,4.7,1,8v9c0,3.3,2.7,6,6,6h10v8l8-8h0  c3.3,0,6-2.7,6-6V8C31,4.7,28.3,2,25,2z"/>
+			</g>
+	);
+}
+}
+
+class Vegetable extends React.Component {
+	render() {
+		return (
+			<path fill={this.props.color} transform="translate(1015,195)" d="M27.8,10.5c-2.1,3.4-4.5,4-8.9,6.3c-5.6,3-4.6,7.8-3.6,10.4c-1.2-1.2-2.4-2.5-3-4.1  c-0.9-2.7,1.1-4.8,2.5-6.9c1.1-1.7,2-3.2,2.3-5.2c0.4-0.2,2.8-1.4,2.7-3.8c-0.1-2.9-2.7-6-5.3-7.3c0.4,2-0.4,3.1-1.3,5.5  c-1.2,3.3,1.2,4.8,2.5,5.4c0,0,0,0,0,0c-0.5,2.5-2.1,4.5-3.6,6.6c0.7-2.1,1.2-5.7-3.1-7.9C5.6,7.8,3.7,7.4,2,4.8  C0.4,8.8,0.8,15.1,3.7,18.3c2.3,2.5,5.8,1.8,6.8,1.5c-0.6,1-1,2.1-0.8,3.3c0.6,3.4,4.4,4.9,5.5,8c0.2,0.5,0.6,0.8,1.1,0.8h0  c0.9,0,1.4-0.9,1.1-1.7c0-0.1-0.1-0.2-0.1-0.3c1.3,0.3,5.8,1.2,8.6-2.1C29.6,23.7,29.9,15.7,27.8,10.5z M15.8,2.4  c0,0,1.2,1.8,1.3,5.3c0.1,2.1,0,3.1-0.1,3.4c-0.4,0-0.9-0.1-1.2-0.2c0-0.1,0-0.1,0.1-0.2C17,6.2,15.8,2.4,15.8,2.4z M10.7,19.6  c-0.5-0.3-2.2-1.5-4.4-4.6c-3-4.2-3.2-6.3-3.2-6.3s2.5,5.4,8.4,9.3c0,0,0.1,0.1,0.1,0.1c-0.1,0.2-0.2,0.3-0.3,0.5  C11.1,18.9,10.9,19.2,10.7,19.6z M21.5,25.6c-1.3,1.6-3.6,3.5-4.3,4.1c-0.4-0.7-0.8-1.3-1.4-1.9c0,0,0.1-0.1,0.1-0.1  c7.4-5.1,10.5-12.2,10.5-12.2S25.6,20.4,21.5,25.6z"/>
+	);
+}
+}
 
 export default class Map extends React.Component {
 	render() {
