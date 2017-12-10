@@ -13,7 +13,7 @@ export default class AutoUpdateMap extends React.Component {
 	}
 
   componentDidMount() {
-    setInterval(this.reloadMap, 300000); //reload Map every 5 minutes(in milliseconds)
+    setInterval(this.reloadMap, 300000); //reload Map every 5 minutes(in milliseconds) 300 000
   }
 
     render() {

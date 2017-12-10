@@ -41,9 +41,6 @@ class MapAll extends React.Component {
 	}
 
 	render() {
-		const mapStyle = {
-    		marginTop: "30px"
-		};
 
 		const { colorCaffe, colorGreen, colorTerrace, colorBrown, nameCaffeNow, nameCaffeThen,
 				nameTerraceNow, nameTerraceThen, nameBrownNow, nameBrownThen,
@@ -51,12 +48,12 @@ class MapAll extends React.Component {
 
 
 	  return (
-	  	<div style={mapStyle}>
-		    <svg width="1405" height="615">
-		    	<rect x="1000" y="30" width="400" height="580" rx="5" ry="5" fill="white" stroke="black" stroke-width="1.5" opacity="0.1"/>
-		    	<line x1="1010" y1="175" x2="1390" y2="175" stroke="black" stroke-width="1.5" opacity="0.1" />
-		    	<line x1="1010" y1="320" x2="1390" y2="320" stroke="black" stroke-width="1.5" opacity="0.1" />
-		    	<line x1="1010" y1="465" x2="1390" y2="465" stroke="black" stroke-width="1.5" opacity="0.1" />
+	  	<div>
+		    <svg viewBox="0 0 1405 615">
+		    	<rect x="1000" y="30" width="400" height="580" rx="5" ry="5" fill="white" stroke="black" strokeWidth="1.5" opacity="0.1"/>
+		    	<line x1="1010" y1="175" x2="1390" y2="175" stroke="black" strokeWidth="1.5" opacity="0.1" />
+		    	<line x1="1010" y1="320" x2="1390" y2="320" stroke="black" strokeWidth="1.5" opacity="0.1" />
+		    	<line x1="1010" y1="465" x2="1390" y2="465" stroke="black" strokeWidth="1.5" opacity="0.1" />
 		    	<g id="map">
 			    	<g opacity="1">
 						<Floor color ="#999999"/>
@@ -76,7 +73,6 @@ class MapAll extends React.Component {
 					<TerraceRect color={colorTerrace} nameNow={nameTerraceNow} nameThen={nameTerraceThen}/>
 				</g>
 		    </svg>
-		    <button onClick={this.reloadMap.bind(this)}>Reload!</button>
 		    <AutoUpdateMap />
 	    </div>
 	  );
@@ -632,8 +628,8 @@ class Cup extends React.Component {
 	render() {
 		return (
 			<g fill={this.props.color} transform="translate(1015,50)">
-				<path fill-rule="evenodd" clip-rule="evenodd" d="M24.9,23.1c0.6,0.4,1.3,0.6,2.1,0.6c2.3,0,4.2-1.9,4.2-4.2   c0-2.3-1.9-4.2-4.2-4.2c-0.1,0-0.3,0-0.4,0v-1H3.8v2.3c0,4.7,2.9,10,6.9,11.9H2.6C3.1,29.9,5.3,31,7.9,31h14.5   c2.6,0,4.8-1.1,5.4-2.5h-8.2C21.8,27.4,23.6,25.4,24.9,23.1z M26.5,16.9c0.1,0,0.3,0,0.4,0c1.4,0,2.6,1.2,2.6,2.6   c0,1.4-1.2,2.6-2.6,2.6c-0.5,0-1-0.2-1.4-0.4C26.1,20.1,26.5,18.4,26.5,16.9z"/>
-				<path fill-rule="evenodd" clip-rule="evenodd" d="M14.6,13c0,0,4.1-1.6,3.7-4.3C17.9,5.9,15.8,6,15.4,4   c-0.6-2.5,1.2-3.7,1.2-3.7s-3,0.9-3.5,3.6c-0.4,2.3,1.3,3,1.8,4.7C15.5,10.3,14.6,13,14.6,13z"/>
+				<path fillRule="evenodd" clipRule="evenodd" d="M24.9,23.1c0.6,0.4,1.3,0.6,2.1,0.6c2.3,0,4.2-1.9,4.2-4.2   c0-2.3-1.9-4.2-4.2-4.2c-0.1,0-0.3,0-0.4,0v-1H3.8v2.3c0,4.7,2.9,10,6.9,11.9H2.6C3.1,29.9,5.3,31,7.9,31h14.5   c2.6,0,4.8-1.1,5.4-2.5h-8.2C21.8,27.4,23.6,25.4,24.9,23.1z M26.5,16.9c0.1,0,0.3,0,0.4,0c1.4,0,2.6,1.2,2.6,2.6   c0,1.4-1.2,2.6-2.6,2.6c-0.5,0-1-0.2-1.4-0.4C26.1,20.1,26.5,18.4,26.5,16.9z"/>
+				<path fillRule="evenodd" clipRule="evenodd" d="M14.6,13c0,0,4.1-1.6,3.7-4.3C17.9,5.9,15.8,6,15.4,4   c-0.6-2.5,1.2-3.7,1.2-3.7s-3,0.9-3.5,3.6c-0.4,2.3,1.3,3,1.8,4.7C15.5,10.3,14.6,13,14.6,13z"/>
 			</g>
 	);
 }
@@ -643,7 +639,7 @@ class Comment extends React.Component {
 	render() {
 		return (
 			<g fill={this.props.color} transform="translate(1045,350)">
-			<path transform="scale(-1,1)" fill-rule="evenodd" clip-rule="evenodd" d="M25,2H7C3.7,2,1,4.7,1,8v9c0,3.3,2.7,6,6,6h10v8l8-8h0  c3.3,0,6-2.7,6-6V8C31,4.7,28.3,2,25,2z"/>
+			<path transform="scale(-1,1)" fillRule="evenodd" clipRule="evenodd" d="M25,2H7C3.7,2,1,4.7,1,8v9c0,3.3,2.7,6,6,6h10v8l8-8h0  c3.3,0,6-2.7,6-6V8C31,4.7,28.3,2,25,2z"/>
 			</g>
 	);
 }
@@ -659,9 +655,10 @@ class Vegetable extends React.Component {
 
 export default class Map extends React.Component {
 	render() {
+
     	return (
-    		<div className="map">
-				<MapAll {...window.__initial_props}/>
+    		<div>
+				<MapAll />
 			</div>
     	);
 	}

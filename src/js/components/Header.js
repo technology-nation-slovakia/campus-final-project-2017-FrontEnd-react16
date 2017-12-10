@@ -1,12 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-import loader from '../../images/loader.svg';
-
-
 const Header = () => (
     <header>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <nav className="navbar navbar-toggleable-md navbar-light bg-faded">
         <div className="container">
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
@@ -20,7 +17,6 @@ const Header = () => (
           </div>
         </div>
       </nav>
-      <img src={loader} className="loader" alt="loader" />
     </header>
 )
 

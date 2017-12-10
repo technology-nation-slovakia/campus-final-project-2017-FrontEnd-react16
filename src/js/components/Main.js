@@ -8,11 +8,13 @@ import Home from '../pages/Home';
 
 const Main = () => (
     <main>
-        <Switch>
-            <Route exact path='/' name="home" component={Home}/>
-            <Route path='/about' name="about" component={About}/>
-            <Route path='/contact' name="contact" component={Contact}/>
-        </Switch>
+        <div className="container-fluid">
+            <Switch>
+                <Route exact path='/' name="home" component={Home}/>
+                <Route path='/about' name="about" component={About}/>
+                <Route path='/contact' name="contact" component={Contact}/>
+            </Switch>
+        </div>
     </main>
 )
 
