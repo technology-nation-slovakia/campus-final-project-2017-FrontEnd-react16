@@ -42,14 +42,17 @@ class MapAll extends React.Component {
 
 	render() {
 
-		const { colorCaffe, colorGreen, colorTerrace, colorBrown, nameCaffeNow, nameCaffeThen,
-				nameTerraceNow, nameTerraceThen, nameBrownNow, nameBrownThen,
-				nameGreenNow, nameGreenThen } = this.state.map;
+		const { colorCaffe, colorGreen, colorTerrace, colorBrown,
+				nameCaffeNow, nameCaffeThen, nameCaffeNowTime, nameCaffeThenTime,
+				nameTerraceNow, nameTerraceThen,
+				nameBrownNow, nameBrownThen,
+				nameGreenNow, nameGreenThen
+				} = this.state.map;
 
 
 	  return (
 	  	<div>
-		    <svg viewBox="0 0 1405 615">
+		    <svg viewBox="0 0 1405 615" preserveAspectRatio="none">
 		    	<rect x="1000" y="30" width="400" height="580" rx="5" ry="5" fill="white" stroke="black" strokeWidth="1.5" opacity="0.1"/>
 		    	<line x1="1010" y1="175" x2="1390" y2="175" stroke="black" strokeWidth="1.5" opacity="0.1" />
 		    	<line x1="1010" y1="320" x2="1390" y2="320" stroke="black" strokeWidth="1.5" opacity="0.1" />
@@ -67,7 +70,7 @@ class MapAll extends React.Component {
 						<Terrace color={colorTerrace} />
 						<People />
 					</g>
-					<KafeRect color={colorCaffe} nameNow={nameCaffeNow} nameThen={nameCaffeThen}/>
+					<KafeRect color={colorCaffe} nameNow={nameCaffeNow} nameThen={nameCaffeThen} nowTime={nameCaffeNowTime} thenTime={nameCaffeThenTime}/>
 					<BrownMeetingRoomRect color={colorBrown} nameNow={nameBrownNow} nameThen={nameBrownThen}/>
 					<GreenMeetingRoomRect color={colorGreen} nameNow={nameGreenNow} nameThen={nameGreenThen}/>
 					<TerraceRect color={colorTerrace} nameNow={nameTerraceNow} nameThen={nameTerraceThen}/>
@@ -259,13 +262,18 @@ class Kafe extends React.Component {
 
 class KafeRect extends React.Component {
 	render() {
-		const nowEventName = this.props.nameNow ?
-        'NOW:  ' + this.props.nameNow :
-        'NOW:  FREE ROOM';
 
-        const thenEventName = this.props.nameThen ?
-        'THEN:  ' + this.props.nameThen :
-        'THEN:  FREE ROOM';
+		let nowEventName = this.props.nameNow ?
+        'NOW:  ' + this.props.nowTime + ' ' + this.props.nameNow :
+        'NOW:  ROOM FREE';
+        
+        if (nowEventName.length >45) {nowEventName = nowEventName.substring(0,45)+'...'}
+
+        let thenEventName = this.props.nameThen ?
+        'THEN:  ' + this.props.thenTime + ' ' + this.props.nameThen :
+        'THEN:  ROOM FREE';
+        
+        if (thenEventName.length >45) {thenEventName = thenEventName.substring(0,45)+'...'}
 
 	return (
 		<g fill={this.props.color}>

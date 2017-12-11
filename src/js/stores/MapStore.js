@@ -15,6 +15,8 @@ class MapStore extends EventEmitter {
                 colorTerrace: '#99cc33',
                 nameCaffeNow: null,
                 nameCaffeThen: null,
+                nameCaffeNowTime: null,
+                nameCaffeThenTime: null,
                 nameTerraceNow: null,
                 nameTerraceThen: null,
                 nameBrownNow: null,
@@ -31,9 +33,15 @@ class MapStore extends EventEmitter {
     handleActions(action) {
         switch(action.type) {
             case "RELOAD_MAP_COFFE": {
-                    if (action.data.data[0].colorCaffe) {this.map.colorCaffe = action.data.data[0].colorCaffe};
+                    if (action.data.data[0].colorCaffe) 
+                        {this.map.colorCaffe = action.data.data[0].colorCaffe};
                     this.map.nameCaffeNow = action.data.data[0].name;
+                    const timeUTCnow = action.data.data[0].start_date;
+                    this.map.nameCaffeNowTime = new Date(timeUTCnow).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+                    
                     this.map.nameCaffeThen = action.data.data[1].name;
+                    const timeUTCthen = action.data.data[1].start_date;
+                    this.map.nameCaffeThenTime = new Date(timeUTCthen).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
                 this.emit("change");
                 break;
             }

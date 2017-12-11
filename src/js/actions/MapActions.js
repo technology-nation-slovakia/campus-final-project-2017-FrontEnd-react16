@@ -10,7 +10,7 @@ export function reloadMap() {
     // https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
     // https://github.com/axios/axios/issues/853 --> if nothig else work try a proxi repeater (end of this issue)
 
-    axios.get("https://my-json-server.typicode.com/technology-nation-slovakia/fakeFrontEndDB/1").then((data) => {
+    axios.get("https://meet-room-restapi.eu-gb.mybluemix.net/api/places/1/items/now").then((data) => {
 
         // if there is ongoing event and next event that day, API sends Array of 2,
         // the ongoing event data[0] will add red color to
