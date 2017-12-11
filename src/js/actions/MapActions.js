@@ -17,6 +17,7 @@ export function reloadMap() {
         if (data.data[0].start_date){
             data.data[0].colorCaffe = '#cc291f';
         }
+        else {data.data[0].colorCaffe = '#99cc33'};
         console.log("got the data! CAFFE", data);
         dispatcher.dispatch({type: "RELOAD_MAP_COFFE", data});
     });
@@ -24,6 +25,7 @@ export function reloadMap() {
         if (data.data[0].start_date){
             data.data[0].colorTerrace = '#cc291f';
         }
+        else {data.data[0].colorTerrace = '#99cc33'};
         console.log("got the data! TERRACE", data);
         dispatcher.dispatch({type: "RELOAD_MAP_TERRACE", data});
     });
@@ -31,6 +33,7 @@ export function reloadMap() {
         if (data.data[0].start_date){
             data.data[0].colorGreen = '#cc291f';
         }
+        else {data.data[0].colorGreen = '#99cc33'};
         console.log("got the data! GREEN", data);
         dispatcher.dispatch({type: "RELOAD_MAP_GREEN", data});
     });
@@ -38,6 +41,7 @@ export function reloadMap() {
         if (data.data[0].start_date){
             data.data[0].colorBrown = '#cc291f';
         }
+        else {data.data[0].colorBrown = '#99cc33'};
         console.log("got the data! BROWN", data);
         dispatcher.dispatch({type: "RELOAD_MAP_BROWN", data});
     });
