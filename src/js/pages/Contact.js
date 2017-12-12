@@ -1,8 +1,11 @@
 import React from 'react'
 
 const Contact = () => (
-  <div>
-    <h1>Call 911</h1>
+  <div class="text2">
+    <p>Adress: Staré Grunty 18, 841 04 Bratislava</p>
+    <p>Phone: +421 904 501 000 / +421 911 471 221</p>
+    <p>E-mail: members@0100campus.sk</p>
+    <div class="image2"></div>
   </div>
 )
 

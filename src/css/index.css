@@ -18,6 +18,28 @@ body {
     font-weight: bold;
     font-size: 120%;
 }
+.text {
+    margin: auto;
+    width: 80%;
+    text-align: justify;
+    margin-top:20px;
+}
+.text2 {
+    margin: auto;
+    width: 80%;
+    text-align: center;
+    margin-top:20px;
+}
+div.image{
+    margin:auto;
+    width:100%;
+    content:url('telka.jpg');
+}
+div.image2{
+    margin:auto;
+    width:100%;
+    content:url('campus.jpg');
+}
 
 #map:hover .rect { animation: none; }
 
