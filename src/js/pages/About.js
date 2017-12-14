@@ -1,7 +1,7 @@
 import React from "react";
 
 const About = () => (
-  <div class="text">
+  <div className="text">
     <h2>About</h2>
     <p>
     Welcome to our awesome app, which shows all events happening in 0100 Campus (the best co-working space in Bratislava) in real-time.
@@ -18,7 +18,7 @@ const About = () => (
     Some of us fell in the battefield, some of survived heavily wounded and some of us won this fight with glory and just tiny scratches. Those who survivedarmed with new coding weapons: <b>Dušan Jankovič, Martina Kusnierova, Lukáš Bihary,
     Vladimir Kargapolov and Matej Mikuška</b></p>
     <p>So be aware, we are ready to use them!</p>
-    <div class="image"></div>
+    <div className="image"></div>
   </div>
 )
 

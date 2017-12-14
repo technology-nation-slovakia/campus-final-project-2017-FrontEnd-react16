@@ -41,6 +41,10 @@ div.image2{
     content:url('campus.jpg');
 }
 
+.logo{
+    margin-left:10px;
+}
+
 #map:hover .rect { animation: none; }
 
 #BubbleGreen:hover + #Rect_Green { animation: none; opacity: 1; }
