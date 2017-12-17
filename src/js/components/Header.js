@@ -5,7 +5,7 @@ import logo from '../../images/logo_campus_color.png';
 const Header = () => (
     <header>
       <nav className="navbar navbar-toggleable-md navbar-light bg-faded">
-      <img src={logo} className="logo" width="15%" />
+      <img src={logo} className="logo" width="15%" alt="logo" />
         <div className="container">
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
