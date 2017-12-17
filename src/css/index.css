@@ -32,13 +32,18 @@ body {
 }
 div.image{
     margin:auto;
-    width:100%;
+    width:80%;
     content:url('telka.jpg');
 }
 div.image2{
     margin:auto;
-    width:100%;
+    width:80%;
     content:url('campus.jpg');
+}
+div.image3{
+    margin:auto;
+    width:80%;
+    content:url('fp_schema.jpg');
 }
 
 #map:hover .rect { animation: none; }
