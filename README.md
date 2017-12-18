@@ -7,4 +7,4 @@ This project was build on [Heroku Buildpack for create-react-app](https://github
 
 ### Demo
 
-You can see the demo [here](http://protected-refuge-95450.herokuapp.com/).
+You can see the demo [here](https://campus0100rooms.herokuapp.com/).
