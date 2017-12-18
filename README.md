@@ -3,7 +3,7 @@
 
 This is the front-end part build with ReactJS.
 
-This project was created on [Heroku Buildpack for create-react-app](https://github.com/mars/create-react-app-buildpack).
+This project was build on [Heroku Buildpack for create-react-app](https://github.com/mars/create-react-app-buildpack).
 
 ### Demo
 
