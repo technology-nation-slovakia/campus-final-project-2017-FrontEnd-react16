@@ -112,14 +112,14 @@ class TerraceRect extends React.Component {
 	render() {
 
 		let nowEventName = this.props.nameNow ?
-        'NOW:  ' + this.props.nowTime + ' ' + this.props.nameNow :
+        'NOW:  until ' + this.props.nowTime + ' ' + this.props.nameNow :
         'NOW:  ROOM FREE';
         
         if (nowEventName.length >45) {nowEventName = nowEventName.substring(0,45)+'...'}
 
         let thenEventName = this.props.nameThen ?
-        'THEN:  ' + this.props.thenTime + ' ' + this.props.nameThen :
-        'THEN:  ROOM FREE';
+        'NEXT:  start\'s at ' + this.props.thenTime + ' ' + this.props.nameThen :
+        'NEXT:  NO MORE BOOKINGS TODAY';
         
         if (thenEventName.length >45) {thenEventName = thenEventName.substring(0,45)+'...'}
         
@@ -164,14 +164,14 @@ class GreenMeetingRoomRect extends React.Component {
 	render() {
 
 		let nowEventName = this.props.nameNow ?
-        'NOW:  ' + this.props.nowTime + ' ' + this.props.nameNow :
+        'NOW:  until ' + this.props.nowTime + ' ' + this.props.nameNow :
         'NOW:  ROOM FREE';
         
         if (nowEventName.length >45) {nowEventName = nowEventName.substring(0,45)+'...'}
 
         let thenEventName = this.props.nameThen ?
-        'THEN:  ' + this.props.thenTime + ' ' + this.props.nameThen :
-        'THEN:  ROOM FREE';
+        'NEXT:  start\'s at ' + this.props.thenTime + ' ' + this.props.nameThen :
+        'NEXT:  NO MORE BOOKINGS TODAY';
         
         if (thenEventName.length >45) {thenEventName = thenEventName.substring(0,45)+'...'}
 
@@ -215,14 +215,14 @@ class BrownMeetingRoomRect extends React.Component {
 	render() {
 
 		let nowEventName = this.props.nameNow ?
-        'NOW:  ' + this.props.nowTime + ' ' + this.props.nameNow :
+        'NOW:  until ' + this.props.nowTime + ' ' + this.props.nameNow :
         'NOW:  ROOM FREE';
         
         if (nowEventName.length >45) {nowEventName = nowEventName.substring(0,45)+'...'}
 
         let thenEventName = this.props.nameThen ?
-        'THEN:  ' + this.props.thenTime + ' ' + this.props.nameThen :
-        'THEN:  ROOM FREE';
+        'NEXT:  start\'s at ' + this.props.thenTime + ' ' + this.props.nameThen :
+        'NEXT:  NO MORE BOOKINGS TODAY';
         
         if (thenEventName.length >45) {thenEventName = thenEventName.substring(0,45)+'...'}
         
@@ -281,14 +281,14 @@ class KafeRect extends React.Component {
 	render() {
 
 		let nowEventName = this.props.nameNow ?
-        'NOW:  ' + this.props.nowTime + ' ' + this.props.nameNow :
+        'NOW:  until ' + this.props.nowTime + ' ' + this.props.nameNow :
         'NOW:  ROOM FREE';
         
         if (nowEventName.length >45) {nowEventName = nowEventName.substring(0,45)+'...'}
 
         let thenEventName = this.props.nameThen ?
-        'THEN:  ' + this.props.thenTime + ' ' + this.props.nameThen :
-        'THEN:  ROOM FREE';
+        'NEXT:  start\'s at ' + this.props.thenTime + ' ' + this.props.nameThen :
+        'NEXT:  NO MORE BOOKINGS TODAY';
         
         if (thenEventName.length >45) {thenEventName = thenEventName.substring(0,45)+'...'}
 

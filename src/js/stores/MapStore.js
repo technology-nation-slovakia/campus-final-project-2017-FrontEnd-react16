@@ -45,7 +45,7 @@ class MapStore extends EventEmitter {
                     if (action.data.data[0].colorCaffe) 
                         {this.map.colorCaffe = action.data.data[0].colorCaffe}
                     this.map.nameCaffeNow = action.data.data[0].name;
-                    const timeUTCnow = action.data.data[0].start_date;
+                    const timeUTCnow = action.data.data[0].end_date;
                     this.map.nameCaffeNowTime = new Date(timeUTCnow).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
                     
                     this.map.nameCaffeThen = action.data.data[1].name;
@@ -58,7 +58,7 @@ class MapStore extends EventEmitter {
                     if (action.data.data[0].colorTerrace)
                         {this.map.colorTerrace = action.data.data[0].colorTerrace}
                     this.map.nameTerraceNow = action.data.data[0].name;
-                    const timeUTCnow = action.data.data[0].start_date;
+                    const timeUTCnow = action.data.data[0].end_date;
                     this.map.nameTerraceNowTime = new Date(timeUTCnow).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
                     
                     this.map.nameTerraceThen = action.data.data[1].name;
@@ -71,7 +71,7 @@ class MapStore extends EventEmitter {
                     if (action.data.data[0].colorGreen) 
                         {this.map.colorGreen = action.data.data[0].colorGreen};
                     this.map.nameGreenNow = action.data.data[0].name;
-                    const timeUTCnow = action.data.data[0].start_date;
+                    const timeUTCnow = action.data.data[0].end_date;
                     this.map.nameGreenNowTime = new Date(timeUTCnow).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
                     
                     this.map.nameGreenThen = action.data.data[1].name;
@@ -84,7 +84,7 @@ class MapStore extends EventEmitter {
                     if (action.data.data[0].colorBrown)
                         {this.map.colorBrown = action.data.data[0].colorBrown};
                     this.map.nameBrownNow = action.data.data[0].name;
-                    const timeUTCnow = action.data.data[0].start_date;
+                    const timeUTCnow = action.data.data[0].end_date;
                     this.map.nameBrownNowTime = new Date(timeUTCnow).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
                     
                     this.map.nameBrownThen = action.data.data[1].name;
